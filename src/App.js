@@ -14,9 +14,10 @@ function App() {
                 <div className="form-sidebar">
                     {Object.keys(STEPS).map((key, index) => {
                         let className = "sidebar-step " + key.toLowerCase();
+                        let active = index === 0 ? "sidebar-step-number actual-step" : "sidebar-step-number";
                         return (
                             <div className={className}>
-                                <div className="sidebar-step-number">{index + 1}</div>
+                                <div className={active}>{index + 1}</div>
                                 <div>
                                     <span className="sidebar-step-text">STEP {index + 1}</span>
                                     <h3 className="sidebar-step-title">{STEPS[key].toUpperCase()}</h3>
