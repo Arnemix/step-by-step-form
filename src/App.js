@@ -2,6 +2,9 @@ import React from "react";
 import "./App.scss";
 import { useState } from "react";
 import YourInfo from "./components/steps/your-info/YourInfo";
+import SelectPlan from "./components/steps/select-plan/SelectPlan.jsx";
+import Addons from "./components/steps/add-ons/Addons.jsx";
+import Summary from "./components/steps/summary/Summary.jsx";
 function App() {
     let stepsNames = {
         STEP_1: "Your info",
@@ -10,8 +13,23 @@ function App() {
         STEP_4: "Summary",
     };
 
-    const [actualStep, setActualStep] = useState(stepsNames.STEP_1);
-    let options = [];
+    const [actualStep, setActualStep] = useState(0);
+    // let options = [];
+
+    const renderSteps = () => {
+        switch (actualStep) {
+            case 0:
+                return <YourInfo />;
+            case 1:
+                return <SelectPlan />;
+            case 2:
+                return <Addons />;
+            case 3:
+                return <Summary />;
+            default:
+                break;
+        }
+    };
 
     return (
         <div className="App">
@@ -31,7 +49,7 @@ function App() {
                         );
                     })}
                 </div>
-                <div className="form-content">{actualStep === stepsNames.STEP_1 && <YourInfo />}</div>
+                <div className="form-content">{renderSteps()}</div>
             </div>
         </div>
     );
