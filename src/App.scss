@@ -7,9 +7,10 @@
 }
 
 .form {
+    gap: 10px;
     padding: 20px;
     border-radius: 20px;
-    min-width: 60%;
+    min-width: 50%;
     min-height: 60%;
     display: flex;
     background-color: white;
@@ -62,4 +63,45 @@
     background-color: #b7dcfb !important;
     color: black !important;
     transition: 1s !important;
+}
+
+.form-content {
+    width: 80%;
+    border-radius: 20px;
+}
+
+// Base des style de steps
+.step {
+    scale: 1.1;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding-left: 10%;
+}
+.step-title {
+    h1 {
+        color: rgb(1, 35, 85);
+    }
+    p {
+        color: rgb(170, 168, 170);
+    }
+}
+
+.step-content {
+    input {
+        width: 80%;
+        height: 30px;
+        border-radius: 10px;
+        border: 2px solid rgb(203, 203, 203);
+        padding: 8px;
+        ::-ms-input-placeholder {
+            color: white;
+        }
+    }
+    p {
+        color: rgb(1, 35, 85);
+        font-weight: bold;
+    }
 }
