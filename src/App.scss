@@ -68,11 +68,31 @@
 .form-content {
     width: 80%;
     border-radius: 20px;
+    .form-buttons {
+        margin-top: 80px;
+        display: flex;
+        gap: 10px;
+        justify-content: space-around;
+        scale: 1.1;
+        .form-button-next {
+            background-color: rgb(0, 36, 80);
+            color: white;
+            font-weight: bold;
+            padding: 20px 30px 20px 30px;
+            border-radius: 20px;
+        }
+        .form-button-back {
+            background-color: transparent;
+            border: 0;
+            color: rgb(0, 36, 80);
+            font-weight: bold;
+        }
+    }
 }
 
 // Base des style de steps
 .step {
-    scale: 1.1;
+    scale: 1;
     padding-top: 40px;
     display: flex;
     flex-direction: column;

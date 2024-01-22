@@ -49,7 +49,31 @@ function App() {
                         );
                     })}
                 </div>
-                <div className="form-content">{renderSteps()}</div>
+                <div className="form-content">
+                    {renderSteps()}
+                    <div className="form-buttons">
+                        <button
+                            className="form-button-back"
+                            onClick={() => {
+                                if (actualStep > 0) {
+                                    setActualStep(actualStep - 1);
+                                } else alert("There is nothing there yet 🙂");
+                            }}
+                        >
+                            Go Back
+                        </button>
+                        <button
+                            className="form-button-next"
+                            onClick={() => {
+                                if (actualStep < 3) {
+                                    setActualStep(actualStep + 1);
+                                }
+                            }}
+                        >
+                            Next Step
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );
