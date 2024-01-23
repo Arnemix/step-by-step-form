@@ -1,0 +1,40 @@
+.plans-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .plan {
+        width: 25%;
+        border: 1px solid lightgray;
+        padding: 10px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+}
+
+.price-choose {
+    margin-top: 50px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: rgb(239, 244, 255);
+}
+
+.swap {
+    cursor: pointer;
+    height: 30px;
+    width: 60px;
+    background-color: rgb(0, 36, 81);
+    border-radius: 20px;
+    .circle {
+        transition: 0.5s;
+        display: flex;
+        transform: translateX(1px);
+        height: 29px;
+        width: 50%;
+        border-radius: 50%;
+        background-color: white;
+        scale: 0.9;
+    }
+}
