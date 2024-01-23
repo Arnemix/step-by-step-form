@@ -16,21 +16,6 @@ function App() {
     const [actualStep, setActualStep] = useState(0);
     // let options = [];
 
-    const renderSteps = () => {
-        switch (actualStep) {
-            case 0:
-                return <YourInfo />;
-            case 1:
-                return <SelectPlan />;
-            case 2:
-                return <Addons />;
-            case 3:
-                return <Summary />;
-            default:
-                break;
-        }
-    };
-
     return (
         <div className="App">
             <div className="form">
@@ -53,7 +38,7 @@ function App() {
                     })}
                 </div>
                 <div className="form-content">
-                    {renderSteps()}
+                    {actualStep === 0 ? <YourInfo /> : actualStep === 1 ? <SelectPlan /> : actualStep === 2 ? <Addons /> : actualStep === 3 ? <Summary /> : <div></div>}
                     <div className="form-buttons">
                         <button
                             className="form-button-back"

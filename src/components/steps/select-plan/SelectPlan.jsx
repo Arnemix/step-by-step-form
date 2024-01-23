@@ -5,6 +5,7 @@ import ProPlanIcon from "../../../assets/pro.svg";
 import "./SelectPlan.scss";
 import { useState } from "react";
 function SelectPlan(props) {
+    
     const [plansPrice, setPlansPrice] = useState("monthly");
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [plans, setPlans] = useState([

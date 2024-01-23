@@ -1,0 +1,14 @@
+{
+    "YourInfo": {
+        "firstName": "",
+        "lastName": "",
+        "email": ""
+    },
+    "SelectPlan": {
+        "selectPlan": "",
+        "planPrice": "monthly"
+    },
+    "AddOns": {
+        "selectAddons": []
+    }
+}

@@ -1,0 +1,23 @@
+.addons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+}
+
+.addon {
+    border-radius: 10px;
+    // margin-top: 10px;
+    display: flex;
+    border: 1px solid lightgray;
+    justify-content: space-around;
+    align-items: center;
+    input {
+        width: 40px !important;
+    }
+}
+
+.selected-addon {
+    background-color: rgb(239, 244, 255);
+    border: 1px solid rgb(0, 36, 81) !important;
+}
