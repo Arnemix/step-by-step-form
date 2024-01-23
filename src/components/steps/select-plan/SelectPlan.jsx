@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ArcadePlanIcon from "../../../assets/arcade.svg";
 import AdvancedPlanIcon from "../../../assets/advenced.svg";
 import ProPlanIcon from "../../../assets/pro.svg";
 import "./SelectPlan.scss";
 import { useState } from "react";
-function SelectPlan(props) {
+function SelectPlan({data}) {
     
     const [plansPrice, setPlansPrice] = useState("monthly");
     const [selectedPlan, setSelectedPlan] = useState(null);
@@ -32,6 +32,15 @@ function SelectPlan(props) {
         },
     ]);
 
+
+    useEffect(() => {
+        setSelectedPlan(data.selectedPlan)
+        setPlansPrice(data.planPrice)
+        // TODO : continuer ce code
+        console.log(`Data json : ${data}`)
+    }, [])
+
+
     const handleSwapPrice = (e) => {
         if (plansPrice === "monthly") {
             setPlansPrice("yearly");
@@ -55,6 +64,8 @@ function SelectPlan(props) {
             if (plan.name === clickedPlan.name) {
                 plan.selected = true;
                 setSelectedPlan(clickedPlan);
+                data.selectPlan = clickedPlan;
+                data.planPrice = plansPrice;
                 setPlans([...plans], null);
             } else {
                 plan.selected = false;

@@ -5,10 +5,10 @@
         "email": ""
     },
     "SelectPlan": {
-        "selectPlan": "",
+        "selectedPlan": "",
         "planPrice": "monthly"
     },
-    "AddOns": {
-        "selectAddons": []
+    "Addons": {
+        "selectedAddons": []
     }
 }

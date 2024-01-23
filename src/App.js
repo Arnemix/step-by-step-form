@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
 import { useState } from "react";
+import data from "./data/data.json";
 import YourInfo from "./components/steps/your-info/YourInfo";
 import SelectPlan from "./components/steps/select-plan/SelectPlan.jsx";
 import Addons from "./components/steps/add-ons/Addons.jsx";
@@ -14,7 +15,6 @@ function App() {
     };
 
     const [actualStep, setActualStep] = useState(0);
-    // let options = [];
 
     return (
         <div className="App">
@@ -38,7 +38,7 @@ function App() {
                     })}
                 </div>
                 <div className="form-content">
-                    {actualStep === 0 ? <YourInfo /> : actualStep === 1 ? <SelectPlan /> : actualStep === 2 ? <Addons /> : actualStep === 3 ? <Summary /> : <div></div>}
+                    {actualStep === 0 ? <YourInfo data={data.YourInfo} /> : actualStep === 1 ? <SelectPlan data={data.SelectPlan} /> : actualStep === 2 ? <Addons data={data.Addons} /> : actualStep === 3 ? <Summary data={data.Summary} /> : <div></div>}
                     <div className="form-buttons">
                         <button
                             className="form-button-back"
