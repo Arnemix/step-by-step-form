@@ -55,7 +55,6 @@ function SelectPlan(props) {
                 plan.selected = true;
                 setSelectedPlan(clickedPlan);
                 setPlans([...plans], null);
-                console.log(plan);
             } else {
                 plan.selected = false;
             }
