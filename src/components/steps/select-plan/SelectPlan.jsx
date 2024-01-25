@@ -39,12 +39,9 @@ function SelectPlan({data}) {
             data.selectedPlan = selectedPlan
             data.planPrice = plansPrice
             setSelectedPlan(data.selectedPlan)
-            setPlansPrice(data.planPrice)
-    
-            // console.log(`Data json : ${JSON.stringify(data.selectPlan)}`);
-            // console.log(`Data selectedPlan : ${JSON.stringify(selectedPlan)}`);
+            setPlansPrice(data.planPrice)    
             setSelectedPlan(data.selectedPlan)
-            console.log(plans)
+            // console.log(plans)
         }, 100)
     });
 
@@ -57,7 +54,7 @@ function SelectPlan({data}) {
             return plan
         })
         setPlans([...plans], null)
-        console.log(`DATA : ${JSON.stringify(data)}`)
+        // console.log(`DATA : ${JSON.stringify(data)}`)
     }, [])
 
 

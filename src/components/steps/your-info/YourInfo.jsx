@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./YourInfo.scss";
 import { useState } from "react";
 
@@ -8,7 +8,7 @@ function YourInfo() {
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
 
-    const constHandleChange = (element, value) => {
+    const handleChange = (element, value) => {
         switch (element) {
             case "name":
                 setName(value);
@@ -24,6 +24,30 @@ function YourInfo() {
         }
     }
 
+    useEffect(() => {
+
+        if (name !== "" && email !== "" && phoneNumber !== "") {
+            console.log(`Data saved: ${name} ${email} ${phoneNumber}`);
+            sessionStorage.setItem("name", name);
+            handleChange("email", email);
+            sessionStorage.setItem("email", email);
+            sessionStorage.setItem("phoneNumber", phoneNumber);
+        }
+    })
+
+    useEffect(() => {
+
+        if (sessionStorage.getItem("name") !== null) {
+            setName(sessionStorage.getItem("name"));
+        }
+        if (sessionStorage.getItem("email") !== null) {
+            setEmail(sessionStorage.getItem("email"));
+        }
+        if (sessionStorage.getItem("phoneNumber") !== null) {
+            setPhoneNumber(sessionStorage.getItem("phoneNumber"));
+        }
+    }, [])
+
 
 
     return (
@@ -34,11 +58,11 @@ function YourInfo() {
             </div>
             <div className="step-content">
                 <p>Your name is: {name}</p>
-                <input onChange={(e) => constHandleChange("name", e.target.value)} type="text" placeholder="Mohamed Amin" />
+                <input onChange={(e) => handleChange("name", e.target.value)} type="text" placeholder="Mohamed Amin" />
                 <p>Your email is: {email}</p>
-                <input onChange={(e) => constHandleChange("email", e.target.value)} type="email" placeholder="amindrayef@gmail.com" />
+                <input onChange={(e) => handleChange("email", e.target.value)} type="email" placeholder="amindrayef@gmail.com" />
                 <p>Your phone number is: {phoneNumber}</p>
-                <input onChange={(e) => constHandleChange("phoneNumber", e.target.value)} type="number" placeholder="+1 234 567 890" />
+                <input onChange={(e) => handleChange("phoneNumber", e.target.value)} type="number" placeholder="+1 234 567 890" />
             </div>
         </div>
     );
