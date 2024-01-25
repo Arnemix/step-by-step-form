@@ -54,7 +54,6 @@ function SelectPlan({data}) {
             return plan
         })
         setPlans([...plans], null)
-        // console.log(`DATA : ${JSON.stringify(data)}`)
     }, [])
 
 
