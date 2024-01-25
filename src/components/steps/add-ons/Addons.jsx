@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 function Addons(props) {
 
-    console.log(props.data);
+    // console.log(props.data);
 
     const [selectedAddons, setSelectedAddons] = useState([]);
     const [addons, setAddons] = [

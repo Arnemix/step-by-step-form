@@ -34,11 +34,36 @@ function SelectPlan({data}) {
 
 
     useEffect(() => {
-        setSelectedPlan(data.selectedPlan)
-        setPlansPrice(data.planPrice)
-        // TODO : continuer ce code
-        console.log(`Data json : ${data}`)
+        setTimeout(() => {
+            if(selectedPlan === null) return
+            data.selectedPlan = selectedPlan
+            data.planPrice = plansPrice
+            setSelectedPlan(data.selectedPlan)
+            setPlansPrice(data.planPrice)
+    
+            // console.log(`Data json : ${JSON.stringify(data.selectPlan)}`);
+            // console.log(`Data selectedPlan : ${JSON.stringify(selectedPlan)}`);
+            setSelectedPlan(data.selectedPlan)
+            console.log(plans)
+        }, 100)
+    });
+
+    useEffect(() => {
+        if(data.selectPlan === undefined) return;
+        plans.map((plan) => {
+            if(data.selectPlan.name === plan.name) {
+                plan.selected = true
+            }
+            return plan
+        })
+        setPlans([...plans], null)
+        console.log(`DATA : ${JSON.stringify(data)}`)
     }, [])
+
+
+    useEffect(() => {
+        
+    })
 
 
     const handleSwapPrice = (e) => {
@@ -63,7 +88,7 @@ function SelectPlan({data}) {
         plans.forEach((plan) => {
             if (plan.name === clickedPlan.name) {
                 plan.selected = true;
-                setSelectedPlan(clickedPlan);
+                setSelectedPlan(plan);
                 data.selectPlan = clickedPlan;
                 data.planPrice = plansPrice;
                 setPlans([...plans], null);
